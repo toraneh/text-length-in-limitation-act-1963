@@ -6,8 +6,4 @@ Reproducible descriptive analysis of word counts from the official India Code PD
 
 **Method:** R, `pdftools::pdf_text()`, whitespace-delimited word counts, 10,000 bootstrap resamples, seed `1963`.
 
-**Paper:** `paper.pdf`
-**Data:** `data/`
-**Code:** `analysis.R`
-
 Author: Hash Torane · 30 August 2026
