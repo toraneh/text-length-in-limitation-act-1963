@@ -1,0 +1,9 @@
+"statistic","value"
+"pdf_pages",24
+"extracted_text_blocks",36
+"bootstrap_resamples",10000
+"observed_mean_words_per_extracted_text_block",303.277777777778
+"bootstrap_mean_words_per_extracted_text_block",303.118275
+"bootstrap_sd",39.0580732383083
+"ci_2.5_percent",226.803472222222
+"ci_97.5_percent",380.5
