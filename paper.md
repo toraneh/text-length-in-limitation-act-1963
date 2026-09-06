@@ -1,6 +1,6 @@
 ---
 title: "Text Length in the *Limitation Act, 1963*"
-author: "Hash Torane"
+author: "Harsh Torane"
 date: "30 August 2026"
 fontsize: 11pt
 geometry: margin=1in
