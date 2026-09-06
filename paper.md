@@ -28,13 +28,13 @@ header-includes:
 ---
 # Abstract
 
-This study presents a descriptive analysis of word counts from the official India Code PDF of the Limitation Act, 1963. Text was extracted with pdftools::pdf_text(), divided into blank-line-separated blocks, and cleaned by removing empty blocks and standalone integer page-number artifacts. Each retained block was counted using whitespace-delimited words. The 24-page PDF yielded 36 text blocks, with an observed mean of 303.28 words per block. A nonparametric bootstrap of these 36 counts, using 10,000 resamples and random seed 1963, produced a mean of 303.12 words, a standard deviation of 39.06 words, and a 95% percentile interval of 226.8–380.5 words.
+This study offers a descriptive analysis of word counts from the official India Code PDF of the Limitation Act, 1963. Text was extracted with `pdftools::pdf_text()`, divided into blank-line-separated blocks, and cleaned by removing empty blocks and standalone integer page-number artifacts. Each retained block was counted by its whitespace-delimited words. The 24-page PDF yielded 36 text blocks, with an observed mean of 303.28 words per block. A nonparametric bootstrap of these 36 counts, using 10,000 resamples and random seed 1963, produced a mean of 303.12 words, a standard deviation of 39.06 words, and a 95% percentile interval of 226.8–380.5 words.
 
 # 1. Introduction
 
-Quantitative description can offer a straightforward way to characterize legal texts. For PDF documents, however, the units available for analysis depend in part on how the text layer is extracted and segmented. Clearly specifying the extraction procedure therefore helps ensure that the resulting measurements can be understood, assessed, and reproduced.
+Quantitative description offers a straightforward way to characterize legal texts, though for PDF documents the units of analysis depend on how the text layer is extracted and segmented. Specifying the extraction procedure clearly helps ensure the resulting measurements can be understood, assessed, and reproduced.
 
-This study applies a fixed extraction and counting procedure to the official India Code PDF of the *Limitation Act, 1963*. The primary measure is the mean number of whitespace-delimited words per extracted text block. Bootstrap resampling is used to describe the variability of this mean under repeated resampling of the observed blocks.
+This study applies a fixed extraction and counting procedure to the official India Code PDF of the *Limitation Act, 1963*. Its primary measure is the mean number of whitespace-delimited words per extracted text block, with bootstrap resampling used to describe the variability of this mean under repeated resampling of the observed blocks.
 
 The 36 observations are operationally defined as PDF-extracted text blocks: consecutive non-empty lines separated by one or more blank lines.
 
@@ -42,9 +42,9 @@ The 36 observations are operationally defined as PDF-extracted text blocks: cons
 
 ## 2.1 Source and text extraction
 
-The sole substantive source was the official India Code PDF of the *Limitation Act, 1963*, containing 24 pages. Text was extracted in R with `pdftools::pdf_text()`.
+The sole substantive source was the official India Code PDF of the *Limitation Act, 1963*, spanning 24 pages. Text was extracted in R with `pdftools::pdf_text()`.
 
-Page text was normalized and divided into lines. Consecutive non-empty lines were joined into blocks, with one or more blank lines defining block boundaries. Empty blocks were removed. Entries consisting solely of digits were removed as standalone PDF page-number artifacts. No other short blocks were excluded. This procedure produced 36 retained blocks.
+Page text was normalized and split into lines. Consecutive non-empty lines were joined into blocks, with one or more blank lines marking block boundaries. Empty blocks were removed, as were entries consisting solely of digits, treated as standalone PDF page-number artifacts. No other short blocks were excluded. This procedure produced 36 retained blocks.
 
 ## 2.2 Word counts
 
@@ -54,36 +54,36 @@ The observed mean was calculated across the 36 block-level word counts.
 
 ## 2.3 Bootstrap procedure
 
-The 36 observed word counts were resampled with replacement for 10,000 bootstrap iterations. Each iteration contained 36 counts, and its mean was recorded. The random-number generator was initialized with seed 1963.
+The 36 observed word counts were resampled with replacement across 10,000 bootstrap iterations, each containing 36 counts, with the mean recorded for every iteration. The random-number generator was initialized with seed 1963.
 
-The bootstrap distribution provides a resampling-based description of variability in the observed mean. Its standard deviation and percentile interval are conditional on the 36 observed blocks and the specified resampling procedure. The bootstrap does not add observations or imply a broader population.
+The bootstrap distribution offers a resampling-based description of variability in the observed mean. Its standard deviation and percentile interval are conditional on the 36 observed blocks and the specified resampling procedure; the bootstrap does not add observations or imply a broader population.
 
 # 3. Results
 
-The 24-page PDF produced 36 retained text blocks. The observed mean was **303.28 words per block**.
+The 24-page PDF produced 36 retained text blocks, with an observed mean of **303.28 words per block**.
 
 Across 10,000 bootstrap resamples, the bootstrap distribution had a mean of **303.12 words** and a standard deviation of **39.06 words**. The 2.5th and 97.5th percentiles were **226.8** and **380.5 words**, respectively.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.85\textwidth]{Figure_1_extracted_text_block_bootstrap.png}
-
 \caption{Bootstrap distribution from 10,000 resamples of 36 extracted blocks. Dashed lines mark the 95\% percentile interval.}
 \end{figure}
 
 # 4. Discussion
 
-The analysis provides a descriptive estimate of the mean for the 36 text blocks generated by the specified PDF-processing procedure. Bootstrap resampling complements this point estimate by describing its variability under repeated resampling of the observed blocks.
+The analysis provides a descriptive estimate of the mean across the 36 text blocks generated by the specified PDF-processing procedure, with bootstrap resampling describing its variability under repeated resampling of those blocks.
 
-The principal methodological limitation concerns unit construction. Block boundaries depend on the PDF text layer and the specified blank-line rule, so a different extraction or segmentation procedure could produce different observations and word counts. The bootstrap results are therefore conditional on this extracted dataset rather than on a broader population of legal or linguistic units.
+The main methodological limitation concerns unit construction: block boundaries depend on the PDF's text layer and the specified blank-line rule, so a different extraction or segmentation procedure could yield different blocks and word counts. The bootstrap results are therefore conditional on this extracted dataset rather than on a broader population of legal or linguistic units.
 
-The source, extraction method, segmentation rule, cleaning steps, counting rule, bootstrap size, and random seed are specified so that the analysis can be independently reproduced.
+The source, extraction method, segmentation rule, cleaning steps, counting rule, bootstrap size, and random seed are all specified so the analysis can be independently reproduced.
 
 # 5. Conclusion
 
 Under the stated procedure, the mean was **303.28 words per PDF-extracted text block**. Bootstrap resampling produced a mean of **303.12 words**, a standard deviation of **39.06 words**, and a **95% percentile interval of 226.8–380.5 words**.
 
-These results provide a focused descriptive summary of the extracted blocks and their bootstrap resampling variability. Their interpretation is appropriately limited to the specified PDF representation and resampling procedure.
+These results offer a focused descriptive summary of the extracted blocks and their bootstrap resampling variability, and should be interpreted only in relation to the specified PDF representation and resampling procedure.
 
 # 6. Reproducibility
 
-The analysis materials and source files are available at the [GitHub repository](https://github.com/toraneh/text-length-in-limitation-act-1963). The substantive source was the official India Code PDF of the *Limitation Act, 1963*. The analysis is based on the specific PDF representation used for the extraction and counting procedure described above.
+The analysis materials and source files are available at the [GitHub repository](https://github.com/toraneh/text-length-in-limitation-act-1963). The substantive source was the official India Code PDF of the *Limitation Act, 1963*, and the analysis is based on the specific PDF representation used for the extraction and counting procedure described above.
