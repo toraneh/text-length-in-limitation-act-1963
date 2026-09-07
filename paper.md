@@ -28,7 +28,7 @@ header-includes:
 ---
 # Abstract
 
-This study offers a descriptive analysis of word counts from the official India Code PDF of the Limitation Act, 1963. Text was extracted with `pdftools::pdf_text()`, divided into blank-line-separated blocks, and cleaned by removing empty blocks and standalone integer page-number artifacts. Each retained block was counted by its whitespace-delimited words. The 24-page PDF yielded 36 text blocks, with an observed mean of 303.28 words per block. A nonparametric bootstrap of these 36 counts, using 10,000 resamples and random seed 1963, produced a mean of 303.12 words, a standard deviation of 39.06 words, and a 95% percentile interval of 226.8–380.5 words.
+This study offers a descriptive analysis of word counts from the official India Code PDF of the *Limitation Act, 1963*. Text was extracted with `pdftools::pdf_text()`, divided into blank-line-separated blocks, and cleaned by removing empty blocks and standalone integer page-number artifacts. Each retained block's word count was then computed as its number of whitespace-delimited tokens. The 24-page PDF yielded 36 text blocks, with an observed mean of 303.28 words per block. A nonparametric bootstrap of these 36 counts, using 10,000 resamples and random seed 1963, produced a mean of 303.12 words, a standard deviation of 39.06 words, and a 95% percentile interval of 226.8–380.5 words.
 
 # 1. Introduction
 
