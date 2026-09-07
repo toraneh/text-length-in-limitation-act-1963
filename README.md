@@ -1,7 +1,8 @@
 # Text Length in the *Limitation Act, 1963*
 
 Reproducible descriptive analysis of word counts from the official India Code PDF of the *Limitation Act, 1963*.
-'\setmainfont{Noto Serif}' in the YAML needs XeLaTeX or LuaLaTeX to compile successfully.
+
+ '\setmainfont{Noto Serif}' in the YAML needs XeLaTeX or LuaLaTeX to compile successfully.
 
 **Result:** 303.28 words per PDF-extracted text block (36 blocks).
 
