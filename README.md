@@ -11,4 +11,4 @@ Reproducible descriptive analysis of word counts from the official India Code PD
 Author: Harsh Torane · 30 August 2026
 
 Please cite it as:
-> Torane, H. “Text Length in the Limitation Act, 1963”. Preprint, Zenodo, September 7, 2026. [10.5281/zenodo.22234824](https://doi.org/10.5281/zenodo.22234824)
+> Torane, H. “Text Length in the Limitation Act, 1963”. Preprint, Zenodo, September 10, 2026. [10.5281/zenodo.22234824](https://doi.org/10.5281/zenodo.22234824)
