@@ -131,11 +131,16 @@ count_words <- function(x) {
   length(words)
 }
 
-words_per_block <- vapply(text_blocks, count_words, integer(1), USE.NAMES = FALSE)
+words_per_block <- vapply(
+  text_blocks, count_words, integer(1), USE.NAMES = FALSE
+)
 n_blocks <- length(words_per_block)
 
 if (n_blocks < 2) {
-  stop("Fewer than two extracted text blocks were found. Bootstrap cannot proceed.")
+  stop(
+    "Fewer than two extracted text blocks were found. ",
+    "Bootstrap cannot proceed."
+  )
 }
 
 
@@ -186,8 +191,14 @@ cat("-------------------------------------------------------\n")
 cat(sprintf("%-48s%s\n", "PDF pages:", length(pages)))
 cat(sprintf("%-48s%s\n", "Extracted text blocks:", n_blocks))
 cat(sprintf("%-48s%s\n", "Bootstrap resamples:", n_boot))
-cat(sprintf("%-48s%s\n", "Observed mean words per extracted text block:", round(observed_mean, 2)))
-cat(sprintf("%-48s%s\n", "Bootstrap mean words per extracted text block:", round(bootstrap_mean_value, 2)))
+cat(sprintf(
+  "%-48s%s\n", "Observed mean words per extracted text block:",
+  round(observed_mean, 2)
+))
+cat(sprintf(
+  "%-48s%s\n", "Bootstrap mean words per extracted text block:",
+  round(bootstrap_mean_value, 2)
+))
 cat(sprintf("%-48s%s\n", "Bootstrap SD:", round(bootstrap_sd, 2)))
 cat(sprintf("%-48s%s\n", "95%% percentile lower:", round(bootstrap_ci[1], 2)))
 cat(sprintf("%-48s%s\n", "95%% percentile upper:", round(bootstrap_ci[2], 2)))
@@ -199,7 +210,9 @@ cat("\n")
 # ------------------------------------------------------------
 
 write.csv(
-  data.frame(block = seq_len(n_blocks), words = words_per_block, text = text_blocks),
+  data.frame(
+    block = seq_len(n_blocks), words = words_per_block, text = text_blocks
+  ),
   file = file.path(output_dir, "observed_text_blocks.csv"),
   row.names = FALSE
 )
@@ -210,7 +223,10 @@ write.csv(
 # ------------------------------------------------------------
 
 write.csv(
-  data.frame(simulation = seq_len(n_boot), mean_words_per_extracted_text_block = bootstrap_mean),
+  data.frame(
+    simulation = seq_len(n_boot),
+    mean_words_per_extracted_text_block = bootstrap_mean
+  ),
   file = file.path(output_dir, "10000_bootstrap_results.csv"),
   row.names = FALSE
 )
@@ -246,7 +262,9 @@ write.csv(
 # ------------------------------------------------------------
 
 png(
-  filename = file.path(output_dir, "Figure_1_extracted_text_block_bootstrap.png"),
+  filename = file.path(
+    output_dir, "Figure_1_extracted_text_block_bootstrap.png"
+  ),
   width = 1000 / 120, height = 650 / 120, units = "in", res = 600
 )
 
