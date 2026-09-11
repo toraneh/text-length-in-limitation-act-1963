@@ -242,12 +242,12 @@ write.csv(
 
 
 # ------------------------------------------------------------
-# 15. Produce the single figure: 300 dpi (dots per inch)
+# 15. Produce the single figure: 600 dpi (dots per inch)
 # ------------------------------------------------------------
 
 png(
   filename = file.path(output_dir, "Figure_1_extracted_text_block_bootstrap.png"),
-  width = 1000 / 120, height = 650 / 120, units = "in", res = 300
+  width = 1000 / 120, height = 650 / 120, units = "in", res = 600
 )
 
 hist(
