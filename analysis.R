@@ -263,7 +263,7 @@ write.csv(
 
 png(
   filename = file.path(
-    output_dir, "Figure_1_extracted_text_block_bootstrap.png"
+    output_dir, "Figure_1.png"
   ),
   width = 1000 / 120, height = 650 / 120, units = "in", res = 600
 )
@@ -292,6 +292,6 @@ cat(
   " - observed_text_blocks.csv\n",
   " - 10000_bootstrap_results.csv\n",
   " - simulation_summary.csv\n",
-  " - Figure_1_extracted_text_block_bootstrap.png\n",
+  " - Figure_1.png\n",
   sep = ""
 )

@@ -66,7 +66,7 @@ Across 10,000 bootstrap resamples, the bootstrap distribution had a mean of **30
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{Figure_1_extracted_text_block_bootstrap.png}
+\includegraphics[width=0.85\textwidth]{Figure_1.png}
 \caption{Bootstrap distribution from 10,000 resamples of 36 extracted blocks. Dashed lines mark the 95\% percentile interval.}
 \end{figure}
 
