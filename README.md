@@ -10,13 +10,13 @@ This study analyzes text length variation across 36 text blocks extracted from t
 
 **Data Source**
 - Official India Code PDF of the *Limitation Act, 1963*
-- Text segmentation: 36 distinct blocks
 
 **Analysis Approach**
 1. Text extraction: `pdftools::pdf_text()` in R
 2. Word counting: Whitespace-delimited boundaries
-3. Variability estimation: 10,000 bootstrap resamples with replacement
-4. Fixed seed: 1963 (reproducibility)
+3. - Text segmentation: 36 distinct blocks
+4. Variability estimation: 10,000 bootstrap resamples with replacement
+5. Fixed seed: 1963 (reproducibility)
 
 **Software Environment**
 - Language: R
