@@ -1,71 +1,57 @@
-# Text Length in the *Limitation Act, 1963*
+# Text Length in the *Limitation Act, 1963*: A Reproducible Descriptive Analysis
 
-A reproducible descriptive analysis of word counts and variation from the official India Code PDF of the *Limitation Act, 1963*.
+A reproducible analysis of word count variation in the official India Code PDF of the *Limitation Act, 1963* using bootstrap resampling.
 
-## Summary of Findings
+## Summary
 
-- **Mean text length:** 303.28 words per PDF-extracted text block (across 36 blocks)
-- **Methodology:** Bootstrap resampling with 10,000 iterations
-- **Random seed:** 1963
+This study analyzes text length variation across 36 text blocks extracted from the official India Code PDF of the *Limitation Act, 1963*. Bootstrap resampling (10,000 iterations, seed = 1963) yields a mean text length of **303.28 words per block** with empirical quantiles providing bounds on variability. Findings are presented as a descriptive statistical exercise demonstrating reproducible text analysis workflows.
 
 ## Methodology
 
-### Data Source
+**Data Source**
+- Official India Code PDF of the *Limitation Act, 1963*
+- Text segmentation: 36 distinct blocks
 
-The analysis uses the official India Code PDF of the *Limitation Act, 1963*. Text was extracted and segmented into 36 distinct text blocks.
+**Analysis Approach**
+1. Text extraction: `pdftools::pdf_text()` in R
+2. Word counting: Whitespace-delimited boundaries
+3. Variability estimation: 10,000 bootstrap resamples with replacement
+4. Fixed seed: 1963 (reproducibility)
 
-### Analysis Approach
+**Software Environment**
+- Language: R
+- Key package: `pdftools` (PDF text extraction)
 
-1. **Text extraction:** `pdftools::pdf_text()` in R
-2. **Word counting:** Whitespace-delimited word boundaries
-3. **Variability estimation:** 10,000 bootstrap resamples with replacement
-4. **Seed:** 1963 for reproducibility
+## Results
 
-### Software Environment
+Mean text length: **303.28 words** (n = 36 blocks, 10,000 bootstrap iterations)
 
-- **Language:** R
-- **Key package:** `pdftools` (for PDF text extraction)
-- **Reproducibility:** Fixed random seed ensures identical results across runs
+Bootstrap results and summary statistics are available in the `output/` directory.
 
-## Data and Reproducibility
+## Repository Contents
 
-### Repository Contents
-
-- `analysis.R` — Complete R script for reproduction
-- `data/` — Source PDF and extracted data
+- `analysis.R` — Complete R script for full reproduction
+- `data/` — Source PDF and extracted text blocks
 - `output/` — Bootstrap results and summary statistics
 
-### Running the Analysis
+## Reproducibility
 
-Execute:
-
+Execute the analysis:
 ```r
 source("analysis.R")
 ```
 
-All results will be regenerated using the fixed seed `1963`.
+All results regenerate using the fixed seed `1963`.
 
-### Technical Note
-
-The source document includes XeLaTeX or LuaLaTeX font specifications (`\setmainfont{Noto Serif}` in the YAML preamble). Compilation requires one of these engines; pdfLaTeX will fail.
+**Technical Note:** The source document specifies XeLaTeX or LuaLaTeX font engines (`\setmainfont{Noto Serif}` in YAML preamble). Compilation requires one of these engines; pdfLaTeX will fail.
 
 ## Citation
 
-Please cite this work as:
-
-```
-Torane, H. (2026). Text Length in the Limitation Act, 1963. 
-Preprint. Zenodo. 
-https://doi.org/10.5281/zenodo.22234824
-```
+Torane, H. (2026). Text Length in the Limitation Act, 1963. *Preprint.* Zenodo. https://doi.org/10.5281/zenodo.22234824
 
 ## License
 
-Unless otherwise specified, the accompanying code and materials are provided for research and educational use.
-
-## Author
-
-Harsh Torane
+Code and materials are provided for research and educational use.
 
 ---
 
