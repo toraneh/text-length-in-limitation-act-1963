@@ -2,4 +2,4 @@
 
 ## Citation
 
-Torane, H. (2026). Text Length in the *Limitation Act, 1963*. *Preprint*. Zenodo. September 11, 2026. https://doi.org/10.5281/zenodo.22234824
+> Torane, H. (2026). Text Length in the *Limitation Act, 1963*. *Preprint*. Zenodo. September 11, 2026. https://doi.org/10.5281/zenodo.22234824
