@@ -1,4 +1,4 @@
-A reproducible computational note.
+A reproducible computational note focused on statutory analysis.
 
 ## Citation
 
