@@ -1,4 +1,4 @@
-**Technical note:** The source document specifies XeLaTeX or LuaLaTeX font engines (`\setmainfont{Noto Serif}` in the YAML preamble). Compilation requires one of these engines; pdfLaTeX will fail.
+A reproducible computational note.
 
 ## Citation
 
